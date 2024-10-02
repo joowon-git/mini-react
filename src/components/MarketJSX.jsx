@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import '../common/market.css';
+import Button from "./custom/Button";
 
 const MarketJSX = () => {
   const [totalOrder, setTotalOrder] = useState(0);
   const [fruits, setFruits] = useState({});
+  const [clickedOrder, setClickedOrder] = useState(false);
 
   useEffect(() => {
     const fruit = ['Banana', 'Apple', 'Orange', 'Cheery', 'Mango'];
@@ -19,7 +21,11 @@ const MarketJSX = () => {
 
   }, []);
 
-  console.log(JSON.stringify(fruits));
+  const handleOrder = () => {
+    setClickedOrder(check => !check);
+  }
+
+  console.log(`rendering: ${JSON.stringify(fruits) }`);
   return (
     <>
       <div className="container">
@@ -28,16 +34,23 @@ const MarketJSX = () => {
           <span>과일 재고</span>
           {
             Object.entries(fruits).map(([item, value], index) => (
-              <div>
+              <div key={index}>
                 {`${item} : ${value}개`}
               </div>
             ))
           }
         </div>
-        <button>주문하기</button>
-        <div className="welcome">
-          어서오세요 손님🎁
+        <div>
+          <div className="welcome" style={{ margin: '40px 0' }}>
+            {clickedOrder ? '주문해주세요 손님🎁 ' : '주문 하시겠습니까? 🥳'}
+          </div>
+          {!clickedOrder &&
+            <Button width='100px' heigh='80px' background={'#92D5FF'} onClick={null} text='주문하기' onClick={handleOrder} />
+          }
         </div>
+
+
+
       </div>
     </>
   );
