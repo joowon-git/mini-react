@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import '../common/market.css';
 import Button from "./custom/Button";
+import Order from "./market/Order";
 
 const MarketJSX = () => {
   const [totalOrder, setTotalOrder] = useState(0);
@@ -44,8 +45,9 @@ const MarketJSX = () => {
           <div className="welcome" style={{ margin: '40px 0' }}>
             {clickedOrder ? '주문해주세요 손님🎁 ' : '주문 하시겠습니까? 🥳'}
           </div>
-          {!clickedOrder &&
+          {!clickedOrder ?
             <Button width='100px' heigh='80px' background={'#92D5FF'} onClick={null} text='주문하기' onClick={handleOrder} />
+            : <Order />
           }
         </div>
 
