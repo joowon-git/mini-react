@@ -1,24 +1,42 @@
 .container {
-  border: 2px solid red;
   width: 1200px;
   margin: auto;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.inventory-container {
+  background-color: rgb(200, 250, 177);
+  height: 360px;
+  border-radius: 10px;
+  padding: 10px 30px;
+  margin-top: 50px;
 }
 
 .total-count {
-  border: 2px solid gold;
+  background-color: rgb(175, 241, 145);
   text-align: center;
-  margin-top: 50px;
-  font-size: 26px;
+  margin-top: 40px;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .total-count .count {
   font-weight: bold;
 }
 
+.order-card {
+  width: 655px;
+}
+
 .inventory {
-  border: 2px solid orange;
-  margin-top: 20px;
+  background-color: rgb(175, 241, 145);
+  margin-top: 33px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .inventory span {
@@ -27,7 +45,56 @@
   display: block;
 }
 
+.stock {
+  background-color: rgb(146, 211, 116);
+  margin-top: 8px;
+  border-radius: 10px;
+  padding: 3px;
+}
+
 .welcome {
   font-size: 24px;
   font-weight: bold;
 }
+
+/* Order.jsx */
+.card {
+  width: 500px;
+  min-height: 220px;
+  margin: 10px auto;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Order.jsx */
+
+/* Nickname.jsx */
+.nickname-input {
+  width: 100px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* Nickname.jsx */
+
+/* Product.jsx */
+.product-container {
+  margin: auto;
+  background-color: rgb(159, 241, 120);
+  width: 300px;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.product-container th {
+  font-weight: bold;
+}
+
+.product-container td {
+  width: 100px;
+}
+/* Product.jsx */
